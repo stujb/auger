@@ -80,7 +80,7 @@ func Convert(inMediaType, outMediaType string, in []byte, out io.Writer) error {
 	if err != nil {
 		return err
 	}
-
+        fmt.Println("About to decode")
 	obj, err := runtime.Decode(inCodec, in)
 	if err != nil {
 		return fmt.Errorf("error decoding from %s: %s", inMediaType, err)
@@ -212,6 +212,7 @@ func newCodec(typeMeta *runtime.TypeMeta, mediaType string) (runtime.Codec, erro
 	encoder := cfactory.EncoderForVersion(info.Serializer, gv)
 	decoder := cfactory.DecoderToVersion(info.Serializer, gv)
 	codec := cfactory.CodecForVersions(encoder, decoder, gv, gv)
+        fmt.Println("Returning codec successfully")
 	return codec, nil
 }
 
