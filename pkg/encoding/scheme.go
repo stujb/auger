@@ -72,6 +72,8 @@ import (
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	serializer "k8s.io/apimachinery/pkg/runtime/serializer"
+
+        buildv1 "openshift.io/api/builds/v1"
 )
 
 var Registry = registered.NewOrDie(os.Getenv("KUBE_API_VERSIONS"))
@@ -146,4 +148,6 @@ func AddToScheme(scheme *runtime.Scheme) {
 	storagev1.AddToScheme(scheme)
 	storagev1alpha1.AddToScheme(scheme)
 	storagev1beta1.AddToScheme(scheme)
+
+	buildv1.AddToScheme(scheme)
 }
