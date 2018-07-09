@@ -117,8 +117,10 @@ func DetectAndExtract(in []byte) (string, []byte, error) {
 func tryFindProto(in []byte) ([]byte, bool) {
 	i := bytes.Index(in, ProtoEncodingPrefix)
 	if i >= 0 && i < len(in) {
+		fmt.Println("Found protoencodingprefix")
 		return in[i:], true
 	}
+		fmt.Println("NOT Found protoencodingprefix")
 	return nil, false
 }
 
