@@ -18,6 +18,7 @@ package encoding
 
 import (
 	"os"
+        "fmt"
 
 	admissionv1beta1 "k8s.io/api/admission/v1beta1"
 
@@ -149,5 +150,7 @@ func AddToScheme(scheme *runtime.Scheme) {
 	storagev1alpha1.AddToScheme(scheme)
 	storagev1beta1.AddToScheme(scheme)
 
+        fmt.Println("Adding to scheme")
 	buildv1.AddToScheme(scheme)
+        fmt.Println("Added to scheme")
 }
