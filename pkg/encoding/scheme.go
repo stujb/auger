@@ -73,7 +73,7 @@ import (
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	serializer "k8s.io/apimachinery/pkg/runtime/serializer"
 
-        buildv1 "openshift.io/api/builds/v1"
+        buildv1 "openshift.io/api/build/v1"
 )
 
 var Registry = registered.NewOrDie(os.Getenv("KUBE_API_VERSIONS"))
