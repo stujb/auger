@@ -30,5 +30,4 @@ import:
   version: kubernetes-1.10.3
 - package: k8s.io/apiserver
   version: kubernetes-1.10.3
-- package: openshift.io/api
-  version: v3.9.0
+- package: openshift.io/oapi
